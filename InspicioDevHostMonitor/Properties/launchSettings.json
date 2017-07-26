@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "InspicioDevHostMonitor": {
+      "commandName": "Project",
+      "commandLineArgs": "--root C:\\Temp\\inst-build"
+    }
+  }
+}
