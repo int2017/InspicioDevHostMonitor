@@ -49,8 +49,15 @@ namespace InspicioDevHostMonitor
 			var pendingFolder = folder + ".next";
 			if (Directory.Exists(pendingFolder))
 			{
-				Console.WriteLine("...Updating to next build");
-				Directory.Delete(folder, true);
+				if (!Directory.Exists(folder))
+				{
+					Console.WriteLine("...starting new branch");
+				}
+				else
+				{
+					Console.WriteLine("...Updating to next build");
+					Directory.Delete(folder, true);
+				}
 				Directory.Move(pendingFolder, folder);
 			}
 		}
